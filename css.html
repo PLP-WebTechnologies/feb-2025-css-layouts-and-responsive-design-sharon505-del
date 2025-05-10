@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox Layout</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      justify-content: space-between;
+    }
+
+    .main-content {
+      flex: 3;
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .main-content {
+        flex: none;
+        margin: 0;
+      }
+
+      .sidebar {
+        flex: none;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      header {
+        font-size: 18px;
+      }
+
+      .main-content, .sidebar {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Responsive Web Design</h1>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="container">
+    <div class="main-content">
+      <h2>Main Content</h2>
+      <p>This is the main content area. It will take up most of the space on larger screens and will stack on top of the sidebar on smaller screens.</p>
+    </div>
+    
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This is the sidebar area. It will be positioned next to the main content on larger screens and below the main content on smaller screens.</p>
+    </div>
+  </div>
+
+</body>
+</html>
